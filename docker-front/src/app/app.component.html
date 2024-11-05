@@ -1,0 +1,23 @@
+<table>
+  <thead>
+    <tr>
+      <th class="py-3 px-2 text-left">Id</th>
+      <th class="py-3 px-2 text-left">Nombre</th>
+      <th class="py-3 px-2 text-left">Apellido</th>
+
+    </tr>
+  </thead>
+  <tbody>
+
+    @for (item of _user; track item.id) {
+    <tr>
+      <td class="py-3 px-4">{{ item.id }}</td>
+      <td class="py-3 px-4">{{ item.nombre }}</td>
+      <td class="py-3 px-4">{{ item.apellidos }}</td>
+    </tr>
+    } @empty {
+    <li>There are no items.</li>
+    }
+
+  </tbody>
+</table>
