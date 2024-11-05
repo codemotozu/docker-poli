@@ -7,9 +7,9 @@ networks:
 services:
  
     api:
-      container_name: ${ENV_PREFIX}back-api
+      container_name: ${ENV_PREFIX}hptel-back-api
       build:
-         context: ./WebApplication1
+         context: ./hotel-back
          dockerfile: Dockerfile
       ports:
         - "5005:5005"
@@ -22,9 +22,9 @@ services:
         - api
       
     front:
-      container_name: ${ENV_PREFIX}list-user-front
+      container_name: ${ENV_PREFIX}list-hotel-front
       build:
-         context: ./docker-front
+         context: ./hotel-front
          dockerfile: Dockerfile
       ports:
         - "80:80"
