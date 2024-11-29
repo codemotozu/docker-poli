@@ -1,0 +1,17 @@
+{
+  "name": "hotel-back",
+  "version": "1.0.0",
+  "description": "Backend for hotel application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "playwright test"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.39.0",
+    "playwright": "^1.39.0"
+  }
+}
