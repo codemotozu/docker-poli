@@ -4,16 +4,16 @@ FROM node:18
 # Set working directory
 WORKDIR /app
 
-# Copy package files first (tanto package.json como package-lock.json si existe)
+# Copy package files
 COPY package*.json ./
 
-# Install dependencies
+# Install dependencies using npm install instead of npm ci
 RUN npm install
 
 # Copy rest of the application
 COPY . .
 
-# Expose port (ajusta según tu configuración)
+# Expose port
 EXPOSE 4000
 
 # Start command
