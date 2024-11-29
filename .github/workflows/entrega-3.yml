@@ -13,12 +13,23 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    - name: Build Frontend Docker image
+    - name: Debug - List files
       run: |
-        cd hotel-front
-        docker build -t hotel-front:$(date +%s) .
+        ls -la
+        echo "Current directory contents:"
+        ls -R hotel-back/
     
     - name: Build Backend Docker image
       run: |
         cd hotel-back
+        # Verifica si package.json existe
+        if [ ! -f "package.json" ]; then
+          echo "Error: package.json not found in hotel-back directory"
+          exit 1
+        fi
         docker build -t hotel-back:$(date +%s) .
+
+    - name: Build Frontend Docker image
+      run: |
+        cd hotel-front
+        docker build -t hotel-front:$(date +%s) .
